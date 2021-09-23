@@ -1,0 +1,36 @@
+class Solution(object):
+    def romanToInt(self, s):
+        result=0
+        if "I" in s and ("V" in s or "X" in s):
+            if s[-1]== "V":  
+                return 4
+            elif s[-1]=="X":
+                return 9
+        elif "X" in s and ("L" in s or "C" in s):
+            if s[-1]== "L":  
+                return 40
+            elif s[-1]=="C":
+                return 90
+        elif "C" in s and ("D" in s or "M" in s):
+            if s[-1]== "D":  
+                return 400
+            elif s[-1]=="M":
+                return 900
+            
+        else:
+            for i in s:
+                if i=="I":
+                    result+=1
+                elif i=="V":
+                    result+=5
+                elif i=="X":
+                    result+=10
+                elif i=="L":
+                    result+=50
+                elif i=="C":
+                    result+=100
+                elif i =="D":
+                    result+=500
+                elif i== "M":
+                    result+=1000
+            return result
