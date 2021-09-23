@@ -1,0 +1,10 @@
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        newArray=[]
+        for i in range(len(nums)-1):
+            if nums[i]<nums[i+1]:
+                newArray.append(nums[i])
+            if nums[i]>nums[i+1]:
+                nums.pop()
+                        
+        return len(newArray)
